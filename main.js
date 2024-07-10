@@ -102,38 +102,37 @@ function calcularCosto() {
     .toFixed(2)
     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-  document.getElementById("output").textContent = `--- Cotización ---
-Área del piso: ${areaPiso} m²
-Perímetro del galpón: ${perimetro} m
-Número total de columnas: ${totalColumnas}
-Área de las paredes: ${areaParedes} m²
-Área total: ${areaTotal} m²
-Estructura seleccionada: ${estructura}
-Material seleccionado: ${material}
-Precio por metro cuadrado de piso: ${precioPorMetro.toFixed(2)} USD/m²
-Costo adicional/reducción por columnas: ${costoColumnas.toFixed(2)} USD
-Costo del cerramiento: ${costoCerramiento.toFixed(2)} USD
-Costo de los kilómetros en ARS: ${costoKmArsFormateado} ARS
-Precio total en USD: ${precioTotal.toFixed(2)} USD
-Precio total en ARS: ${precioTotalArsFormateado} ARS
-Precio final con porcentaje adicional en ARS: ${precioFinalArsFormateado} ARS`;
+  document.getElementById("output").innerHTML = `<h2>Cotización</h2>
+<p>Área del piso: <span>${areaPiso} m²<span><p/>
+<p>Perímetro del galpón: <span>${perimetro} m<span><p/>
+<p>Número total de columnas: <span>${totalColumnas}<span><p/>
+<p>Área de las paredes: <span>${areaParedes} m²<span><p/>
+<p>Área total: <span>${areaTotal} m²<span><p/>
+<p>Estructura seleccionada: <span>${estructura}<span><p/>
+<p>Material seleccionado: <span>${material}<span><p/>
+<p>Precio por metro cuadrado de piso: <span>${precioPorMetro.toFixed(
+    2
+  )} USD/m²<span><p/>
+<p>Costo adicional/reducción por columnas: <span>${costoColumnas.toFixed(
+    2
+  )} USD<span><p/>
+<p>Costo del cerramiento: <span>${costoCerramiento.toFixed(2)} USD<span><p/>
+<p>Costo de los kilómetros en ARS: <span>${costoKmArsFormateado} ARS<span><p/>
+<p>Precio total en USD: <span>${precioTotal.toFixed(2)} USD<span><p/>
+<p>Precio total en ARS: <span>${precioTotalArsFormateado} ARS<span><p/>
+<p>Precio final con porcentaje adicional en ARS: <span>${precioFinalArsFormateado} ARS<span><p/>`;
 
-  outputToCopy = `Precio total en ARS: $${precioTotalArsFormateado} ARS 
-Precio final con porcentaje adicional en ARS: $${precioFinalArsFormateado} ARS`;
+  outputToCopy = `$${precioFinalArsFormateado}`;
 }
 
-function copiarPrecio() {
+async function copiarPrecio() {
   if (!outputToCopy) {
     alert("Debes realizar una cotización antes de copiar el precio");
     return;
   }
-
-  const textArea = document.createElement("textarea");
-  textArea.value = outputToCopy;
-  document.body.appendChild(textArea);
-  textArea.select();
-  document.execCommand("copy");
-  document.body.removeChild(textArea);
-
-  alert("Precio final copiado al portapapeles");
+  try {
+    await navigator.clipboard.writeText(outputToCopy);
+  } catch (error) {
+    console.error(error.message);
+  }
 }

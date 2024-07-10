@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+h2 {
+  text-align: center;
+}
+label,
+input,
+select,
+button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 16px;
+  height: 2rem;
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  height: 4rem;
+}
+button:hover {
+  background-color: #45a049;
+}
+pre {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.result {
+  font-size: 24px;
+  font-weight: bold;
+}
+.copy-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+@media (max-width: 600px) {
+  label,
+  input,
+  select,
+  button {
+    font-size: 14px;
+  }
+  .result {
+    font-size: 20px;
+  }
+  .copy-btn {
+    font-size: 14px;
+  }
+}

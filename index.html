@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Costos</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <h2>Calculadora de Costos</h2>
+
+    <label for="estructura">Estructura:</label>
+    <select id="estructura">
+      <option value="Galpón">Galpón</option>
+      <option value="Tinglado">Tinglado</option>
+    </select>
+
+    <label for="material">Material:</label>
+    <select id="material">
+      <option value="Hierro Torsionado">Hierro Torsionado</option>
+      <option value="Perfil U Ángulo">Perfil U Ángulo</option>
+      <option value="Alma Llena">Alma Llena</option>
+    </select>
+
+    <label for="ancho">Ancho (m):</label>
+    <input
+      type="number"
+      id="ancho"
+      value="15" />
+
+    <label for="largo">Largo (m):</label>
+    <input
+      type="number"
+      id="largo"
+      value="25" />
+
+    <label for="alto">Alto (m):</label>
+    <input
+      type="number"
+      id="alto"
+      value="5" />
+
+    <label for="cerramiento">Cerramiento (m):</label>
+    <input
+      type="number"
+      id="cerramiento"
+      value="4.5" />
+
+    <label for="tipo_cambio">Tipo de cambio (USD a ARS):</label>
+    <input
+      type="number"
+      id="tipo_cambio"
+      value="1" />
+
+    <label for="porcentaje">Porcentaje adicional (%):</label>
+    <input
+      type="number"
+      id="porcentaje"
+      value="0" />
+
+    <label for="km">Kilómetros:</label>
+    <input
+      type="number"
+      id="km"
+      value="0" />
+
+    <button onclick="calcularCosto()">Calcular Costo</button>
+
+    <h3>Resultado:</h3>
+    <pre
+      id="output"
+      class="result"></pre>
+    <button
+      class="copy-btn"
+      onclick="copiarPrecio()">
+      Copiar Precio Final
+    </button>
+
+    <script src="main.js"></script>
+  </body>
+</html>

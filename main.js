@@ -122,7 +122,7 @@ function calcularCosto() {
 <p>Precio total en ARS: <span>${precioTotalArsFormateado} ARS<span><p/>
 <p>Precio final con porcentaje adicional en ARS: <span>${precioFinalArsFormateado} ARS<span><p/>`;
 
-  outputToCopy = `$${precioFinalArsFormateado}`;
+  outputToCopy = `${precioFinalArsFormateado}`;
 }
 
 async function copiarPrecio() {

@@ -51,9 +51,9 @@ function calcularCosto() {
   }
 
   if (material === "Perfil U Ángulo") {
-    precioPorMetro += 20;
+    precioPorMetro += 10;
   } else if (material === "Alma Llena") {
-    precioPorMetro += 42;
+    precioPorMetro += 30;
   }
 
   const numColumnasLargo = Math.floor(largo / 5) + 1;
